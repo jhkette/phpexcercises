@@ -27,9 +27,6 @@ switch ($id) {
 	include 'views/404.php';
 	}
 
-// For now, set $content to a placeholder value, remove this when you have 
-// added your switch statement above
-$content = '<h1>Under Construction...</h1>';
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
