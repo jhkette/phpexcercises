@@ -36,16 +36,19 @@ switch ($id) {
 		<link rel="stylesheet" href="./styles/style.css">
     </head>
     <body>
+	<div class = "container">
+	<nav>
 		<ul>
 			<li><a href="index.php">Home</a></li>
 			<li><a href="index.php?page=authors">Authors</a></li>
 			<li><a href="index.php?page=books">Books</a></li>
 		</ul>
+	</nav>	
         
 		<?php
 		// Display content for requested view.
 		echo $content;
 		?>
-		
+    </div>		
     </body>
 </html>

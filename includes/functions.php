@@ -34,8 +34,6 @@ function printAuthor($authors){
 
 function printBook($title, $isbn, $price, $authors){
 
-
-    
     $output = '<table> <tr> <td>'. $title . '</td> <td>' . $isbn
     . '</td> <td>' .  formatMoney($price) .
     '</td>   <td>' . printAuthor($authors) . '</td> </tr> </table>';
