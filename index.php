@@ -33,6 +33,7 @@ switch ($id) {
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title>BBK ITApps - Building Web Applications using MySQL and PHP</title>
+		<link rel="stylesheet" href="./styles/style.css">
     </head>
     <body>
 		<ul>

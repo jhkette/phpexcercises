@@ -7,29 +7,29 @@ function formatMoney($number) {
 }
 
 function printAuthor($authors){
-    $output = '';
-    switch(true){
+    $output ='';
+    switch (true) {
 
     case (count($authors) == 1):
-    $output= '<p>'. htmlentities($authors[0]). '<p>'. PHP_EOL;
+    return  $output.= '<p>'. htmlentities($authors[0]). '<p>';
     break;
     
     case (count($authors) == 2):
-        $output= '<p>'. htmlentities($authors[0]). ' and '. htmlentities($authors[1]). '<p>';
-        break;
+    return '<p class="hello">'. htmlentities($authors[0]). ' and '. htmlentities($authors[1]). '<p>';
+    break;
     
     default:   
     $finalauthor = array_reverse($authors);
-    $output.=  '<p>' . $authors[0];
+    $output .=  '<p>' . $authors[0];
     array_shift($authors);
     array_pop($authors);
     foreach ($authors as $key => $author) {
         $output.=', ' . htmlentities($author);
     }
-    
     $output .=  ' and '.  htmlentities($finalauthor[0]). '</p>'. PHP_EOL;
-}
     return $output;
+    }
+    
 }
 
 function printBook($title, $isbn, $price, $authors){
