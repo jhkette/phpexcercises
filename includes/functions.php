@@ -9,22 +9,21 @@ function formatMoney($number) {
 function printAuthor($authors){
     $output = '';
     if(count($authors) == 1){
-    $output= '<p>'. $authors[0]. '<p>'. PHP_EOL;
+    $output= '<p>'. htmlentities($authors[0]). '<p>'. PHP_EOL;
     }
-    if(count($authors) == 2){
-        $output= '<p>'. $authors[0]. ' and '. $authors[1]. '<p>'. PHP_EOL;
+    else if (count($authors) == 2){
+        $output= '<p>'. htmlentities($authors[0]). ' and '. htmlentities($authors[1]). '<p>'. PHP_EOL;
     }
-    if(count($authors) > 2){
+    else{
     $finalauthor = array_reverse($authors);
     $output.= '<p>'. $authors[0];
-    $newauthors = $authors;
-    array_shift($newauthors);
-    array_pop($newauthors);
-    foreach ($newauthors as $key => $author) {
-        $output.=', ' .$author;
+    array_shift($authors);
+    array_pop($authors);
+    foreach ($authors as $key => $author) {
+        $output.=', ' . htmlentities($author);
     }
     
-    $output.= ' and '.  $finalauthor[0]. '</p>'. PHP_EOL;
+    $output.= ' and '.  htmlentities($finalauthor[0]). '</p>'. PHP_EOL;
 }
     return $output;
 }
