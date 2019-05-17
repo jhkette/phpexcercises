@@ -9,25 +9,25 @@ function formatMoney($number) {
 function printAuthor($authors){
     $output ='';
     switch (true) {
-
-    case (count($authors) == 1):
-    return  $output.= '<p>'. htmlentities($authors[0]). '<p>';
-    break;
-    
-    case (count($authors) == 2):
-    return '<p class="hello">'. htmlentities($authors[0]). ' and '. htmlentities($authors[1]). '<p>';
-    break;
-    
-    default:   
-    $finalauthor = array_reverse($authors);
-    $output .=  '<p>' . $authors[0];
-    array_shift($authors);
-    array_pop($authors);
-    foreach ($authors as $key => $author) {
-        $output.=', ' . htmlentities($author);
-    }
-    $output .=  ' and '.  htmlentities($finalauthor[0]). '</p>'. PHP_EOL;
-    return $output;
+        
+        case (count($authors) == 1):
+        return  $output.=  htmlentities($authors[0]);
+        break;
+        
+        case (count($authors) == 2):
+        return htmlentities($authors[0]). ' and '. htmlentities($authors[1]);
+        break;
+        
+        default:   
+        $finalauthor = array_reverse($authors);
+        $output .=  $authors[0];
+        array_shift($authors);
+        array_pop($authors);
+        foreach ($authors as $key => $author) {
+            $output.=', ' . htmlentities($author);
+        }
+        $output .=  ' and '.  htmlentities($finalauthor[0]);
+        return $output;
     }
     
 }
