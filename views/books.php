@@ -5,7 +5,9 @@ $content .= printBook('Prioritibility', '978-0321350312', 24.99, array(
     'Hoa Loranger'
 ));
 // handle to create sql statements 
-$link = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+$link = mysqli_connect(
+    $config['db_host'], $config['db_user'], $config['db_pass'], $config['db_name']
+    );
 
 if(mysqli_connect_errno()){
     exit(mysqli_connect_error());
