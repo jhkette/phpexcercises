@@ -10,10 +10,14 @@ $content .= '<p>'.printAuthor($a2) .'</p>';
 $content .= '<p>'.printAuthor($a3) .'</p>';
 $content .= '<p>'.printAuthor($a4) .'</p>';
 
-// $sql = "INSERT INTO students( firstname, age)
-// VALUES ('steven', 23)";
-// $ok = mysqli_query($link, $sql);
+
+// handle to create sql statements 
 $link = mysqli_connect( DB_HOST, DB_USER, DB_PASS, DB_NAME);
+
+if(mysqli_connect_errno()){
+    exit(mysqli_connect_error());
+}
+
 
 $names = array(
     0 => array(
@@ -26,6 +30,7 @@ $names = array(
         )
     );
 foreach ($names as $writer) {
+    // always use - mysqli_real_escape_string it will escape charecters 
     $first = mysqli_real_escape_string($link, $writer[0]);
     $second = mysqli_real_escape_string($link, $writer[1]);
     $sql = "INSERT INTO author (firstname, lastname)
@@ -35,7 +40,7 @@ foreach ($names as $writer) {
     if ($ok === false) {
     echo mysqli_error($link);
     } else {
-    // echo 'Data inserted...';
+ 
     }
 }
 
