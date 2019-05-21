@@ -24,6 +24,12 @@ switch ($id) {
 	case 'books' :
 	include 'views/books.php';
 	break;
+	case 'all-authors' :
+	include 'views/viewauthors.php';
+	break;
+	case 'delete' :
+	include 'views/delete.php';
+	break;
 	default :
 	include 'views/404.php';
 	}
@@ -42,7 +48,9 @@ switch ($id) {
 		<ul>
 			<li><a href="index.php">Home</a></li>
 			<li><a href="index.php?page=authors">Authors</a></li>
+			<li><a href="index.php?page=all-authors">All Authors</a></li>
 			<li><a href="index.php?page=books">Books</a></li>
+			<li><a href="index.php?page=delete">delete</a></li>
 		</ul>
 	</nav>	
         
